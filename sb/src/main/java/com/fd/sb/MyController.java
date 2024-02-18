@@ -1,19 +1,25 @@
 package com.fd.sb;
 
+import io.swagger.annotations.Api;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(path = "/api")
+// @RequestMapping(path = "/api")
+@Api(tags = "MyController")// swagger dokumantasyonu için
 public class MyController {
 
-    @GetMapping({"/welcome", "/welcome/{name}"})
-    public String welcome(@PathVariable(required = false) String name) {
-        return "Hoş geldiniz. " + name;
+    @GetMapping("admin")
+    public String admin () {
+        return "Admin rolü görebilir mesajı";
     }
 
-    @GetMapping(path = "/welcome2")
-    public String welcome2(@RequestParam(name = "fname", required = false, defaultValue = "isminizi girin") String firstName) {
-        return "Hoş geldiniz. " + firstName;
+    @GetMapping("/index")
+    public String index(){
+        return "index sayfası";
+    }
+    @GetMapping("/dashboard")
+    public String dashboarh(){
+        return "Login başarılı dashboard sayfası";
     }
 }
