@@ -1,12 +1,13 @@
 import Header from "./components/Header"
 import Login from "./components/Login"
 import User from "./components/User"
-import logo from './logo.svg';
+import Counter from "./components/Counter"
+import Colors from "./components/Colors"
 import './App.css';
 
 const isLoggedIn = false;
 const loginLabel = "Giriş Ekranı";
-const fullName = "Fatih DURMUŞ"
+const fullName = "Fatih DURMUŞ";
 
 function App() {
   return (
@@ -17,10 +18,12 @@ function App() {
         {
           isLoggedIn ? "Hoşgeldin " + fullName : <Login />
         }
-      </div>
-      <User name="Fatih" city="Yalova" plate={77}/>
-      <User name="Ahmet" city="İstanbul" plate={34}/>
-      <User name="Orhan" city="Artvin" plate={8}/>
+      <Counter/>
+      <Colors/>
+    </div >
+      <User name="Fatih" city="Yalova" plate={77}  />
+      <User name="Ahmet" city="İstanbul" plate={34} friends={['Orhan', 'Gül', 'Sultan']} />
+      <User name="Orhan" city="Artvin" plate={8} friends={['Hatice', 'Ayşe', 'Saniye']} />
     </>
   );
 }
